@@ -22,7 +22,8 @@ $(document).ready(function () {
                 }
 
                 if (!$(".list-group-item.active").length) {
-                    makeActive($(".list-group-item").last());
+                    if (!$(".list-group-item").first().hasClass("list-group-item-danger"))
+                        makeActive($(".list-group-item").last());
                 } else {
                     var active = $(".list-group-item.active");
                     makeInactive(active);
@@ -39,7 +40,8 @@ $(document).ready(function () {
                 }
 
                 if (!$(".list-group-item.active").length) {
-                    makeActive($(".list-group-item").first());
+                    if (!$(".list-group-item").first().hasClass("list-group-item-danger"))
+                        makeActive($(".list-group-item").first());
                 } else {
                     var active = $(".list-group-item.active");
                     makeInactive(active);
@@ -61,7 +63,7 @@ $(document).ready(function () {
 function performAutocomplete(text) {
 
     if (text.length > 0) {
-        var url = "search?action=autocomplete&text=" + text;
+        var url = "asearch?action=autocomplete&text=" + text;
 
         $.ajax({
             url: url,
