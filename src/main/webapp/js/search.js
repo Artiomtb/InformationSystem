@@ -63,7 +63,7 @@ $(document).ready(function () {
 function performAutocomplete(text) {
 
     if (text.length > 0) {
-        var url = "asearch?action=autocomplete&text=" + text;
+        var url = "search?action=autocomplete&text=" + text;
 
         $.ajax({
             url: url,
